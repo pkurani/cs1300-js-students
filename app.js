@@ -32,10 +32,8 @@ function renderRandomPlant() {
       (request.onload = request.onerror = function () {
         const response = request.response;
         const data = JSON.parse(response).data;
-        console.log(data);
         const randomElement = Math.floor(Math.random() * data.length);
         document.getElementById('tester').innerHTML = data[randomElement].common_name
-        console.log(data[randomElement].image_url);
         document.getElementById("plantImg").src = data[randomElement].image_url;
         var genusArr = data.filter(function(plant){ //filter function used here!
             return plant.genus === data[randomElement].genus;
